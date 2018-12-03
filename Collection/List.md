@@ -1,4 +1,4 @@
-# 第1节：Vector ArrayList LinkList
+# 第1节：List
 
 # ![](C:\Users\dell\Desktop\gitbook\Collection\Collection.png)
 
