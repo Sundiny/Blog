@@ -82,7 +82,9 @@ final void treeifyBin(Node<K,V>[] tab, int hash) {
 
 HashMap在并发问题的如下（https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6423457）
 
-产生的原因分析（https://mailinator.blogspot.com/2009/06/beautiful-race-condition.html）或者书耗子叔的这篇文章（https://coolshell.cn/articles/9606.html）
+产生的原因分析（https://mailinator.blogspot.com/2009/06/beautiful-race-condition.html）
+
+或者书耗子叔的这篇文章（https://coolshell.cn/articles/9606.html）
 
 总而言之这个问题的产生是本身由链表的存储结构造成的，链表成环引发了循环引用，而在HashMap扩容的的时候元素，扩容之后的元素的位置发生了改变，在单线程的情况下是没有问题的，而在多线程的情况下，对位置的操作顺序是无法控制的，因而造成了成环，引发了死锁。具体的过程可以看上面的两篇文章。
 
